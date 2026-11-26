@@ -6,6 +6,7 @@
 <title>HM TECH</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/lieu.css">
 </head>
 <body>
 <header class="facade"><div class="wrap">
@@ -17,6 +18,12 @@
     <h2 id="titre"></h2><p class="sub">Commandez sur WhatsApp en un clic.</p>
     <div class="grid" id="grid"></div>
     <p class="note">Les prix et la disponibilité peuvent changer. Confirmez avec nous avant de venir.</p>
+  </div></section>
+  <section id="lieu" hidden><div class="wrap">
+    <h2>Où nous trouver</h2>
+    <p id="lieu-addr"></p>
+    <div id="lieu-map"></div>
+    <a class="cta" id="lieu-btn" href="#" target="_blank" rel="noopener">Itinéraire sur Google Maps</a>
   </div></section>
   <section class="contact"><div class="wrap">
     <h2>Nous contacter</h2>
@@ -34,5 +41,6 @@
 </div>
 <script src="/common.js"></script>
 <script src="/app.js"></script>
+<script src="/lieu.js"></script>
 </body>
 </html>
