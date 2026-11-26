@@ -30,6 +30,8 @@ if (process.argv[2] === "set-admin") {
   if (!okEmail(e || "") || !p || p.length < 10) { console.log("Usage : node server.js set-admin votre@email.com MotDePasse (10 caractères minimum)"); process.exit(1); }
   setAdmin(e, p); console.log("Administrateur enregistré : " + e); process.exit(0);
 }
+const DEFAULT_MAP = "https://maps.app.goo.gl/oEHTAvb2Uj4m4W9y7?g_st=ic";
+if (db.map === undefined) { db.map = DEFAULT_MAP; db.addr = db.addr || ""; save(); }
 if (!db.admin && process.env.ADMIN_EMAIL && process.env.ADMIN_PASSWORD && process.env.ADMIN_PASSWORD.length >= 10) setAdmin(process.env.ADMIN_EMAIL, process.env.ADMIN_PASSWORD);
 if (!db.admin) console.log("ATTENTION : aucun administrateur. Lancez : node server.js set-admin votre@email.com MotDePasse");
 
@@ -42,7 +44,7 @@ setInterval(() => { const n = Date.now(); sess.forEach((v, k) => { if (v < n) se
 
 /* ---- utilitaires ---- */
 const HEAD = {
-  "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+  "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src https://www.google.com; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
   "X-Content-Type-Options": "nosniff", "X-Frame-Options": "DENY", "Referrer-Policy": "same-origin"
 };
 function send(res, code, data, type, extra) {
@@ -82,9 +84,9 @@ function clean(b) {
     id: slug(p.id, 30) || crypto.randomBytes(4).toString("hex"), cat: p.cat, nom: str(p.nom, 120),
     prix: Math.max(0, Math.min(1e9, Number(p.prix) || 0)), dispo: !!p.dispo, desc: str(p.desc, 1500), k: str(p.k, 200), photo: photo(p.photo)
   }));
-  return { shop: str(b.shop, 60) || "Boutique", slogan: str(b.slogan, 200), hello: str(b.hello, 200), wa: str(b.wa, 20).replace(/\D/g, ""), cats, items };
+  return { shop: str(b.shop, 60) || "Boutique", slogan: str(b.slogan, 200), hello: str(b.hello, 200), wa: str(b.wa, 20).replace(/\D/g, ""), addr: str(b.addr, 200), map: /^https:\/\//.test(str(b.map, 500)) ? str(b.map, 500) : "", cats, items };
 }
-const pub = () => ({ shop: db.shop, slogan: db.slogan, hello: db.hello, wa: db.wa, cats: db.cats, items: db.items });
+const pub = () => ({ shop: db.shop, slogan: db.slogan, hello: db.hello, wa: db.wa, addr: db.addr || "", map: db.map || "", cats: db.cats, items: db.items });
 
 /* ---- API ---- */
 async function api(req, res, u) {
