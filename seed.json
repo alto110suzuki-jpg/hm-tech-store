@@ -1,0 +1,135 @@
+{
+ "shop": "HM TECH",
+ "slogan": "Téléphones, PC, logiciels et consoles. Demandez un prix à l’assistant ou commandez sur WhatsApp.",
+ "hello": "Bonjour ! Demandez-moi un prix, la disponibilité d’un produit ou comment commander.",
+ "wa": "213000000000",
+ "cats": [
+  {
+   "id": "telephones",
+   "nom": "Téléphones",
+   "emo": "📱"
+  },
+  {
+   "id": "pc",
+   "nom": "PC et logiciels",
+   "emo": "💻"
+  },
+  {
+   "id": "gaming",
+   "nom": "Gaming",
+   "emo": "🎮"
+  }
+ ],
+ "items": [
+  {
+   "id": "t1",
+   "cat": "telephones",
+   "nom": "iPhone 15 128 Go",
+   "prix": 145000,
+   "dispo": true,
+   "desc": "",
+   "photo": "",
+   "k": "iphone"
+  },
+  {
+   "id": "t2",
+   "cat": "telephones",
+   "nom": "Samsung Galaxy A54",
+   "prix": 62000,
+   "dispo": true,
+   "desc": "",
+   "photo": "",
+   "k": "a54, samsung"
+  },
+  {
+   "id": "t3",
+   "cat": "telephones",
+   "nom": "Xiaomi Redmi Note 13",
+   "prix": 42000,
+   "dispo": false,
+   "desc": "",
+   "photo": "",
+   "k": "redmi, xiaomi"
+  },
+  {
+   "id": "p1",
+   "cat": "pc",
+   "nom": "PC portable HP 15",
+   "prix": 89000,
+   "dispo": true,
+   "desc": "",
+   "photo": "",
+   "k": "hp"
+  },
+  {
+   "id": "p2",
+   "cat": "pc",
+   "nom": "PC portable Lenovo IdeaPad",
+   "prix": 95000,
+   "dispo": true,
+   "desc": "",
+   "photo": "",
+   "k": "lenovo"
+  },
+  {
+   "id": "p3",
+   "cat": "pc",
+   "nom": "Windows 11 Pro (licence)",
+   "prix": 3500,
+   "dispo": true,
+   "desc": "",
+   "photo": "",
+   "k": "windows"
+  },
+  {
+   "id": "p4",
+   "cat": "pc",
+   "nom": "Microsoft Office 2021",
+   "prix": 4500,
+   "dispo": true,
+   "desc": "",
+   "photo": "",
+   "k": "office, word, excel"
+  },
+  {
+   "id": "p5",
+   "cat": "pc",
+   "nom": "Antivirus 1 an",
+   "prix": 2500,
+   "dispo": true,
+   "desc": "",
+   "photo": "",
+   "k": "antivirus"
+  },
+  {
+   "id": "g1",
+   "cat": "gaming",
+   "nom": "PlayStation 5",
+   "prix": 95000,
+   "dispo": true,
+   "desc": "",
+   "photo": "",
+   "k": "ps5"
+  },
+  {
+   "id": "g2",
+   "cat": "gaming",
+   "nom": "PlayStation 4 Slim",
+   "prix": 55000,
+   "dispo": true,
+   "desc": "",
+   "photo": "",
+   "k": "ps4"
+  },
+  {
+   "id": "g3",
+   "cat": "gaming",
+   "nom": "Manette DualSense",
+   "prix": 11000,
+   "dispo": true,
+   "desc": "",
+   "photo": "",
+   "k": "manette"
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+HM TECH - site de vente autonome (independant de Claude)
+=========================================================
+
+CE QU'IL FAUT
+- Un hebergement qui execute Node.js 18 ou plus (VPS, Render, Railway, Hostinger Node, cPanel "Setup Node.js App"...).
+- Rien a installer : aucune dependance npm.
+
+DEMARRAGE (sur votre PC pour tester, ou sur le serveur)
+1. Creez votre compte administrateur (e-mail + mot de passe de 10 caracteres minimum) :
+     node server.js set-admin votre@email.com VotreMotDePasse
+2. Lancez le site :
+     node server.js
+3. Pages :
+     http://localhost:3000        -> le site pour vos clients (sans compte)
+     http://localhost:3000/admin  -> espace administrateur (connexion e-mail + mot de passe)
+
+SUR L'HEBERGEUR
+- Envoyez tout le dossier. Commande de demarrage : node server.js (ou npm start).
+- Le serveur utilise la variable PORT si l'hebergeur la fournit.
+- Variables ADMIN_EMAIL et ADMIN_PASSWORD : creent le compte administrateur au premier
+  demarrage (alternative a la commande set-admin).
+- Derriere un proxy/HTTPS de l'hebergeur : ajoutez la variable TRUST_PROXY=1.
+- ACTIVEZ LE HTTPS (certificat SSL) : sans HTTPS, votre mot de passe circule en clair.
+
+SECURITE INCLUSE
+- Mot de passe stocke chiffre (scrypt), jamais en clair.
+- Session par cookie HttpOnly, SameSite=Strict, expire apres 12 h.
+- 8 tentatives de connexion maximum par 15 minutes.
+- Seul le serveur modifie les produits : un client ne peut rien changer.
+- Page /admin non indexee par Google.
+
+SAUVEGARDE
+- Tout est dans le dossier "data" (db.json + photos). Copiez-le regulierement.
+
+OUBLI DU MOT DE PASSE
+- Relancez : node server.js set-admin votre@email.com NouveauMotDePasse
+
+PERSONNALISER
+- Produits de depart : seed.json (utilise seulement si data/db.json n'existe pas encore).
+- Couleurs et style : public/style.css
+
+HEBERGEMENT RENDER AVEC DISQUE PERMANENT (offre payante)
+- Ajoutez un disque (Disk) monte sur /var/data, puis la variable DATA_DIR=/var/data
+  Sans cela, vos produits et photos sont perdus a chaque redemarrage.
