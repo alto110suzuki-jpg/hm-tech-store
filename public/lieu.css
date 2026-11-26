@@ -1,0 +1,4 @@
+#lieu{padding:36px 0;border-top:6px solid var(--orange)}
+#lieu[hidden]{display:none}
+#lieu-addr{font-size:1.15rem;font-weight:500;margin:0 0 16px}
+#lieu-map iframe{width:100%;height:340px;border:3px solid var(--orange);border-radius:8px;display:block;margin-bottom:16px;background:var(--gris)}
