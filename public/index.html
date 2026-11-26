@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HM TECH</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="facade"><div class="wrap">
+  <div class="bar"><a class="sign" id="shop" href="#">HM TECH</a><nav id="nav" aria-label="Rubriques"></nav></div>
+  <div class="hero"><p id="slogan"></p></div>
+</div></header>
+<main>
+  <section><div class="wrap">
+    <h2 id="titre"></h2><p class="sub">Commandez sur WhatsApp en un clic.</p>
+    <div class="grid" id="grid"></div>
+    <p class="note">Les prix et la disponibilité peuvent changer. Confirmez avec nous avant de venir.</p>
+  </div></section>
+  <section class="contact"><div class="wrap">
+    <h2>Nous contacter</h2>
+    <p class="sub">Une question, une commande ou un produit introuvable ? Écrivez-nous.</p>
+    <a class="cta" id="wa-main" href="#" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+  </div></section>
+</main>
+<footer><div class="wrap">© HM TECH</div></footer>
+<button id="chat-btn" aria-expanded="false" aria-controls="chat">Assistant</button>
+<div id="chat" role="dialog" aria-label="Assistant">
+  <div class="ch-head"><span>Assistant</span><button id="chat-x" aria-label="Fermer">×</button></div>
+  <div id="msgs" aria-live="polite"></div>
+  <div class="quick" id="quick"></div>
+  <form class="ch-form" id="form"><input id="inp" placeholder="Écrivez votre question…" autocomplete="off" aria-label="Votre message"><button type="submit">Envoyer</button></form>
+</div>
+<script src="/common.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
