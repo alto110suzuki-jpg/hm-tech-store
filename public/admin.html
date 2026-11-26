@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Administration</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="facade"><div class="wrap"><div class="bar"><span class="sign">ADMINISTRATION</span></div></div></header>
+<div id="login" class="wrap loginbox ed">
+  <h2>Connexion</h2>
+  <form id="loginform">
+    <label>Adresse e-mail<input id="em" type="email" autocomplete="username" required></label>
+    <label>Mot de passe<input id="pw" type="password" autocomplete="current-password" required></label>
+    <p class="err" id="err" role="alert"></p>
+    <button class="cta" type="submit">Se connecter</button>
+  </form>
+</div>
+<div id="adminbar"><div class="wrap">
+  <a href="/" target="_blank" rel="noopener">Voir le site</a>
+  <button id="save" class="go" type="button">Enregistrer et publier</button>
+  <span id="st" role="status"></span>
+  <button id="logout" type="button">Se déconnecter</button>
+</div></div>
+<div id="panel"></div>
+<script src="/common.js"></script>
+<script src="/admin.js"></script>
+</body>
+</html>
